@@ -1,0 +1,53 @@
+
+.order-list {
+    list-style-type: upper-alpha;
+    color: teal;
+}
+
+.order-list2 {
+    list-style-type: lower-roman;
+    color: purple;
+}
+
+.order-list3{
+    list-style-type: upper-latin;
+    color: orange;
+}
+
+.order-list4{
+    list-style-type: decimal-leading-zero;
+    color: brown;
+}
+.order-list5{
+    list-style-type: lower-alpha;
+    color: gray;
+}
+.unorder-list{
+    list-style-type: disc;
+    color: red;
+}
+.unorder-list2{
+    list-style-type: circle;
+    color: green;
+}
+.unorder-list3{
+    list-style-type: square;
+    color: blue;
+}
+.unorder-list4{
+    list-style-type: triangle;
+    color: black;
+}
+
+.custom-list li::before{
+    content: "★ ";
+    color: gold;
+
+}
+
+.custom-list-2 li::before{
+    background-color: blue;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}

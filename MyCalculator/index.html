@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Noto+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="calc-wrap">
+<div class="calc" id="calc" data-shift="0" data-alpha="0">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="header-row1">
+      <span class="brand-casio">CASIO</span>
+      <div class="header-right">
+        <span class="natural-vpam">Natural-V.P.A.M.</span>
+      </div>
+    </div>
+    <div class="header-divider"></div>
+  </div>
+
+  <!-- ===== DISPLAY ===== -->
+  <div class="display-section">
+    <div class="display-bezel">
+      <div class="lcd" id="lcdScreen">
+        <!-- Status bar -->
+        <div class="lcd-status">
+          <span class="ind" id="ind-S">S</span>
+          <span class="ind" id="ind-A">A</span>
+          <span class="ind" id="ind-M">M</span>
+          <span class="ind" id="ind-STO">STO</span>
+          <span class="ind" id="ind-RCL">RCL</span>
+          <span class="ind-sep"></span>
+          <span class="ind" id="ind-FIX">FIX</span>
+          <span class="ind" id="ind-SCI">SCI</span>
+          <span class="ind-anglemode" id="ind-angle">D</span>
+        </div>
+        <!-- Expression line -->
+        <div class="lcd-expr" id="exprLine"><span class="cursor-block" id="cursor"></span></div>
+        <!-- Result line -->
+        <div class="lcd-result" id="resultLine">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODEL + SOLAR ===== -->
+  <div class="model-section">
+    <div class="solar-cell">
+      <div class="solar-strip"></div>
+      <div class="solar-strip"></div>
+      <div class="solar-strip"></div>
+      <div class="solar-strip"></div>
+      <div class="solar-strip"></div>
+    </div>
+    <div class="model-text-area">
+      <span class="model-name">fx-991ES PLUS</span>
+      <span class="model-sub">2ND EDITION</span>
+    </div>
+  </div>
+
+  <!-- ===== KEYPAD ===== -->
+  <div class="keypad">
+
+    <!-- ROW 1: SHIFT, ALPHA, MODE, ←, → -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">OFF</span>
+        <button class="k k-shift" id="btnShift">SHIFT</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">LOCK</span>
+        <button class="k k-alpha" id="btnAlpha">ALPHA</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">SETUP</span>
+        <button class="k k-mode" data-main="mode">MODE<br><span style="font-size:0.46rem">▼</span></button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">REPLAY</span>
+        <button class="k k-nav" data-main="left">◄</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">CALC</span>
+        <button class="k k-nav" data-main="right">►</button>
+      </div>
+    </div>
+
+    <!-- ROW 2: ↑, ↓, Blank, DEL, AC -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">M–</span>
+        <button class="k k-nav" data-main="up">▲</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">M+</span>
+        <button class="k k-nav" data-main="down">▼</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-fn" data-main="nthroot" data-shift="nthroot">ˣ√</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">INS</span>
+        <button class="k k-del" data-main="del" data-shift="ins">DEL</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">OFF</span>
+        <button class="k k-ac" data-main="ac" data-shift="off">AC</button>
+      </div>
+    </div>
+
+    <!-- ROW 3: x⁻¹  x!  √  x²  ^ -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">D</span>
+        <span class="sl">STAT</span>
+        <button class="k k-fn" data-main="inv" data-alpha="D">x⁻¹</button>
+      </div>
+      <div class="kw">
+        <span class="al">E</span>
+        <span class="sl">d/dx</span>
+        <button class="k k-fn" data-main="fact" data-alpha="E">x!</button>
+      </div>
+      <div class="kw">
+        <span class="al">F</span>
+        <span class="sl">∫dx</span>
+        <button class="k k-fn" data-main="sqrt" data-shift="cbrt" data-alpha="F">√</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">x³</span>
+        <button class="k k-fn" data-main="sq" data-shift="cube">x²</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">ⁿ√</span>
+        <button class="k k-fn" data-main="pow" data-shift="pow">^</button>
+      </div>
+    </div>
+
+    <!-- ROW 4: log  ln  (-)  °'"  hyp -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">X</span>
+        <span class="sl">10ˣ</span>
+        <button class="k k-sci" data-main="log" data-shift="tenx" data-alpha="X">log</button>
+      </div>
+      <div class="kw">
+        <span class="al">Y</span>
+        <span class="sl">eˣ</span>
+        <button class="k k-sci" data-main="ln" data-shift="expx" data-alpha="Y">ln</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">Ans</span>
+        <button class="k k-fn" data-main="neg" data-shift="ans">(–)</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">←</span>
+        <button class="k k-fn" data-main="dms" data-shift="left">°'"</button>
+      </div>
+      <div class="kw">
+        <span class="al">M</span>
+        <span class="sl">M+</span>
+        <button class="k k-sci" data-main="hyp" data-shift="mplus" data-alpha="M">hyp</button>
+      </div>
+    </div>
+
+    <!-- ROW 5: sin  cos  tan  (  ) -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">A</span>
+        <span class="sl">sin⁻¹</span>
+        <button class="k k-trig" data-main="sin" data-shift="asin" data-alpha="A">sin</button>
+      </div>
+      <div class="kw">
+        <span class="al">B</span>
+        <span class="sl">cos⁻¹</span>
+        <button class="k k-trig" data-main="cos" data-shift="acos" data-alpha="B">cos</button>
+      </div>
+      <div class="kw">
+        <span class="al">C</span>
+        <span class="sl">tan⁻¹</span>
+        <button class="k k-trig" data-main="tan" data-shift="atan" data-alpha="C">tan</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">{</span>
+        <button class="k k-fn" data-main="lparen" data-shift="lbrace">(</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">}</span>
+        <button class="k k-fn" data-main="rparen" data-shift="rbrace">)</button>
+      </div>
+    </div>
+
+    <!-- ROW 6: 7  8  9  RCL  STO -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num7">7</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num8">8</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num9">9</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">STO</span>
+        <button class="k k-fn" data-main="rcl" data-shift="sto">RCL</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">Ran#</span>
+        <button class="k k-fn" data-main="percent" data-shift="random">%</button>
+      </div>
+    </div>
+
+    <!-- ROW 7: 4  5  6  ×  ÷ -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num4">4</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num5">5</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num6">6</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-op" data-main="mul">×</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-op" data-main="div">÷</button>
+      </div>
+    </div>
+
+    <!-- ROW 8: 1  2  3  +  − -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num1">1</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num2">2</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-num" data-main="num3">3</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-op" data-main="add">+</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">&nbsp;</span>
+        <button class="k k-op" data-main="sub">−</button>
+      </div>
+    </div>
+
+    <!-- ROW 9: 0  .  ×10^x  Ans  = -->
+    <div class="krow">
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">π</span>
+        <button class="k k-num" data-main="num0" data-shift="pi">0</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">Ran#</span>
+        <button class="k k-num" data-main="dot" data-shift="random">.</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">e</span>
+        <button class="k k-fn" data-main="exp" data-shift="euler">×10ˣ</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">D/R/G</span>
+        <button class="k k-fn" data-main="ans" data-shift="drg">Ans</button>
+      </div>
+      <div class="kw">
+        <span class="al">&nbsp;</span>
+        <span class="sl">%</span>
+        <button class="k k-eq" data-main="equals">=</button>
+      </div>
+    </div>
+
+  </div><!-- /keypad -->
+</div><!-- /calc -->
+</div><!-- /calc-wrap -->
+    <script src="./index.js"></script>
+</body>
+</html>

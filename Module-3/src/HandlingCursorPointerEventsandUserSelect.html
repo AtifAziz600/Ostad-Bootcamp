@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor & Pointer Events</title>
+  <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="p-6 space-y-6">
+
+  <!-- ================= Cursor Types ================= -->
+  <div class="flex flex-wrap gap-4">
+    <button class="btn cursor-pointer">pointer</button>
+    <button class="btn cursor-wait">wait</button>
+    <button class="btn cursor-text">text</button>
+    <button class="btn cursor-move">move</button>
+    <button class="btn cursor-help">help</button>
+    <button class="btn cursor-not-allowed">not-allowed</button>
+    <button class="btn cursor-context-menu">context-menu</button>
+    <button class="btn cursor-progress">progress</button>
+    <button class="btn cursor-cell">cell</button>
+  </div>
+
+  <!-- ================= Pointer Events ================= -->
+  <div class="space-y-2">
+    <input
+      type="text"
+      placeholder="pointer-events-none"
+      class="border border-gray-300 p-2 pointer-events-none"
+    />
+
+    <input
+      type="text"
+      placeholder="pointer-events-auto"
+      class="border border-gray-300 p-2 pointer-events-auto"
+    />
+  </div>
+
+  <!-- ================= User Select ================= -->
+  <p class="select-none border p-4 rounded bg-gray-100">
+    select-none ase bole copy kora jay na.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Inventore velit numquam sit quis ut modi aspernatur nam aut
+    perspiciatis.
+  </p>
+
+</body>
+</html>

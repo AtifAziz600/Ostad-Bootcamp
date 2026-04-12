@@ -1,0 +1,9 @@
+Entity Code    | Output  | Description
+-----------------------------------------------
+&lt;             | <       | Less Than চিহ্ন
+&gt;             | >       | Greater Than চিহ্ন
+&amp;            | &       | Ampersand চিহ্ন
+&quot;          | "       | Double Quote (")
+&apos;          | '       | Single Quote (')
+&nbsp;          | (space) | অতিরিক্ত স্পেস যোগ করা
+&copy;          | ©       | কপিরাইট চিহ্ন

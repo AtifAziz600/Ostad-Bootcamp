@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- Task add korar section -->
+<div class="task-creation-section">
+
+    <!-- user ekhane task likhbe -->
+    <input type="text" id="add-task-input" placeholder="Write a task">
+
+    <!-- button click korle task add hobe -->
+    <button id="task-creation-button">Add</button>
+
+</div>
+
+
+<!-- Task gula dekhano hobe ekhane -->
+<div id="task-list">
+
+    <!-- single task item -->
+    <div class="task-item">
+
+        <label for="task-1-checkbox">
+            <!-- complete mark korar jonno checkbox -->
+            <input type="checkbox" id="task-1-checkbox">
+            Task 1
+        </label>
+
+        <!-- edit button -->
+        <button>Edit</button>
+
+        <!-- delete button -->
+        <button>Delete</button>
+
+    </div>
+
+</div>
+
+    <!-- <button id="change-color-btn">Change Color</button> -->
+    <script src="./todo.js"></script>
+</body>
+</html>

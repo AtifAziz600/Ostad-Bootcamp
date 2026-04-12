@@ -1,0 +1,79 @@
+.box {
+    border: 2px solid black;
+    padding: 20px;
+    border-width: 4px 2px 6px 8px;
+}
+
+.dot h1{
+    border: 1px dotted black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.dash p{
+    border: 3px dashed black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.double{
+    border: 2px double black;
+    border-width: 4px 2px 6px 8px;
+    
+}
+.rigde{
+    border: 4px ridge black;
+    padding: 20px;
+    border-radius: 100px;
+}
+
+.inside{
+    border: 5px inset black;
+    padding: 20px;
+}
+.outside{
+    border: 5px outset black;
+    padding: 20px;
+}
+
+.groove{
+    border: 5px groove black;
+    padding: 20px;
+}
+.solid{
+    border: 5px solid black;
+    padding: 20px;
+}
+.none{
+    border: none;
+    padding: 20px;
+}
+.hidden{
+    border: hidden;
+    padding: 20px;
+}
+.thick{
+    border: thick solid black;
+    padding: 20px;
+}
+.thin{
+    border: thin solid black;
+    padding: 20px;
+}
+
+.medium{
+    border: medium solid black;
+    padding: 20px;
+}
+
+.circle {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lime;
+}

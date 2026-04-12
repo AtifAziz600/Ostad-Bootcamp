@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#para {
+    color: blue !important;
+    font-size: 20px;
+}
+
+input[type="text"] {
+    border: 2px solid green ;
+    padding: 5px ;
+}
+
+.a-input{
+    border: 2px solid red !important;
+    padding: 10px !important;
+}

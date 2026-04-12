@@ -1,0 +1,17 @@
+img {
+    float: right;
+    margin-right: 20px;
+    width: 100px;
+}
+
+.box{
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-color: lightblue;
+    margin-left: 20px;
+}
+
+.clearify{
+    clear: both;
+}

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+  position: relative;
+  width: 400px;
+  height: 300px;
+  border: 1px solid #ccc;
+}
+
+.box {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.box{
+    background-color: rgb(255, 100, 0.8);
+}
+
+.box1{
+    background-color: rgba(255, 0, 0, 0.7);
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+}
+.box2{
+    background-color: rgba(0, 0, 255, 0.7);
+    top: 100px;
+    left: 100px;
+    z-index: 2;
+}
+.box3{
+    background-color: rgba(0, 128, 0, 0.7);
+    top: 150px;
+    left: 150px;
+    z-index: 3;
+}

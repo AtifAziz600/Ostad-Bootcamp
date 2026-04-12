@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Animations Only</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen gap-10">
+
+    <h1 class="text-3xl font-bold text-blue-600 animate-pulse">
+        Tailwind Animations Example
+    </h1>
+
+    <!-- Fade In (using opacity transition on hover) -->
+    <div class="bg-green-400 text-white px-6 py-4 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-1000">
+        Fade In on Hover
+    </div>
+
+    <!-- Slide In (translate + transition on hover) -->
+    <div class="bg-purple-500 text-white px-6 py-4 rounded-lg transform -translate-x-20 hover:translate-x-0 transition-transform duration-700">
+        Slide In on Hover
+    </div>
+
+    <!-- Bounce (Tailwind built-in) -->
+    <div class="bg-red-500 text-white px-6 py-4 rounded-lg animate-bounce">
+        Bounce
+    </div>
+
+    <!-- Spin -->
+    <div class="bg-yellow-400 text-white px-6 py-4 rounded-full w-20 h-20 flex items-center justify-center animate-spin">
+        🔄
+    </div>
+   <!-- <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
+    <button class="relative bg-green-500 text-white px-6 py-3 rounded-lg">
+      Ping Button
+    </button> -->
+  </div>
+    <!-- Pulse -->
+    <div class="bg-blue-400 text-white px-6 py-4 rounded-lg animate-pulse">
+        Pulse
+    </div>
+
+    <!-- Wiggle (using rotate + transition on hover) -->
+    <div class="bg-indigo-500 text-white px-6 py-4 rounded-lg transform hover:rotate-12 transition-transform duration-500">
+        Wiggle on Hover
+    </div>
+
+</body>
+</html>

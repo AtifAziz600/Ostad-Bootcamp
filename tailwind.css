@@ -1,0 +1,97 @@
+body{
+    background-color: white;
+    margin: 0;
+    padding: 50px;
+}
+
+.grand-parent{
+    background-color: rgb(red, green, blue, 0.5);
+    border: 3px solid;
+    padding: 50px;
+}
+
+.child{
+    height: 100px;
+    width: 100px;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.child-1{
+    /* display: block; */
+    background: cyan;
+}
+.child-2 {
+    /* display: inline; */
+    background: red;
+    color: white;
+    position: relative;
+    right: 100px;
+    top: 100px;
+}
+
+.child-3{
+    /* display: inline-block; */
+    background: green;
+    position: absolute;
+    margin-left: 150px;
+}
+
+.child-4{
+    /* display: inline-flex; */
+    background: blue;
+    position: fixed;
+}
+
+.child-5{
+    /* display: flex; */
+    background: yellow;
+    position: sticky;
+}
+
+.child-6{
+    background: orange;
+}
+
+.card{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.card-img{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-category{
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card-title{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    color: black;
+}
+
+.card-footer{
+    background-color: whitesmoke;
+    border-top: 1px solid black;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer button{
+    padding: 16px;
+}

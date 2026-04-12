@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+    border: 4px solid navy;
+    /* transform: scale(1.5); */
+    /* transform: rotateX('45deg');
+    transition: transform 0.5s ease;
+    transform: rotateY('90deg'); */
+    /* transform: translateY(50px);
+    transform: translateX(40px); */
+    /* transform: translateX(45px) translateY(50px) rotate(20deg) scale(1.2); */
+    /* transform: rotate(45deg); */
+    transform: skew(180deg);
+}

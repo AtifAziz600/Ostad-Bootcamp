@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ostad Live</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+              .btn1 {
+            background-color: steelblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn2 {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn2:hover {
+            background-color: #c82333;
+        }
+        .btn3 {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+        .btn4 {
+            background: linear-gradient(to right, orange, yellow);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn5 {
+            background-color: transparent;
+            color: blue;
+            border: 2px solid blue;
+            padding: 8px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn6 {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .btn7 {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .btn7:hover {
+            background-color: blue;
+        }
+        .btn8 {
+            background-color: yellow;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+        .btn9 {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            position: relative;
+        }
+        .btn9::before {
+            content: "★";
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .btn10 {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: not-allowed;
+            border-radius: 4px;
+            opacity: 0.6;
+        }
+    </style>
+  </head>
+  <body>
+    <header class="top-0 z-50 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <div class="font-bold shrink-0">
+            <a href="#" class="text-2xl text-gray-800">BrandLogo</a>
+          </div>
+
+          <nav class="hidden md:flex space-x-8 font-normal text-gray-700">
+            <a
+              href="#"
+              class="text-gray-800 hover:text-gray-900 hover:font-medium"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-gray-800 hover:text-gray-900 hover:font-medium"
+              >About</a
+            >
+            <a
+              href="#"
+              class="text-gray-800 hover:text-gray-900 hover:font-medium"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="text-gray-800 hover:text-gray-900 hover:font-medium"
+              >Contact</a
+            >
+          </nav>
+
+          <div class="hidden md:block">
+            <button class="px-4 py-2 text-gray-900 transition cursor-pointer">
+              Login
+            </button>
+            <button
+              class="bg-orange-600 text-white px-6 py-2 rounded-lg cursor-pointer transition"
+            >
+              Sign Up
+            </button>
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-800 focus:outline-none p-2"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-100 shadow-lg z-50"
+      >
+        <nav class="flex flex-col p-4 space-y-4 font-normal text-gray-700">
+          <a
+            href="#"
+            class="block px-2 py-2 text-gray-800 hover:bg-gray-50 rounded"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="block px-2 py-2 text-gray-800 hover:bg-gray-50 rounded"
+            >About</a
+          >
+          <a
+            href="#"
+            class="block px-2 py-2 text-gray-800 hover:bg-gray-50 rounded"
+            >Services</a
+          >
+          <a
+            href="#"
+            class="block px-2 py-2 text-gray-800 hover:bg-gray-50 rounded"
+            >Contact</a
+          >
+          <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+            <button class="w-full text-center py-3 text-gray-900 font-medium">
+              Login
+            </button>
+            <button
+              class="w-full bg-orange-600 text-white py-3 rounded-lg font-medium"
+            >
+              Sign Up
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div style="padding: 20px; text-align: center">
+      <h2>10 Different Style Buttons</h2>
+      <button class="btn1">Button 1</button>
+      <button class="btn2">Button 2</button>
+      <button class="btn3">Button 3</button>
+      <button class="btn4">Button 4</button>
+      <button class="btn5">Button 5</button>
+      <button class="btn6">Button 6</button>
+      <button class="btn7">Button 7</button>
+      <button class="btn8">Button 8</button>
+      <button class="btn9">Button 9</button>
+      <button class="btn10">Button 10</button>
+    </div>
+
+<div class="max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg space-y-6">
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-2">
+      Username
+    </label>
+    <input
+      type="text"
+      placeholder="Enter your username"
+      class="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+    />
+  </div>
+
+  <div>
+    <p class="text-sm font-medium text-gray-700 mb-2">Gender</p>
+
+    <div class="flex items-center gap-6">
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"
+          name="gender"
+          class="appearance-none h-4 w-4 border border-gray-400 rounded-full checked:bg-blue-600 checked:border-blue-600"
+        />
+        <span class="text-sm text-gray-700">Male</span>
+      </label>
+
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"
+          name="gender"
+          class="appearance-none h-4 w-4 border border-gray-400 rounded-full checked:bg-blue-600 checked:border-blue-600"
+        />
+        <span class="text-sm text-gray-700">Female</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="relative">
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      class="peer w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <label
+      for="password"
+      class="absolute left-4 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-600"
+    >
+      Password
+    </label>
+  </div>
+
+</div>
+
+  </body>
+</html>
+<script>
+  const btn = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>

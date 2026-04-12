@@ -1,0 +1,207 @@
+/* =====================
+   CSS VARIABLES
+===================== */
+:root {
+    --main-color: wheat;
+    --secondary-color: seagreen;
+    --blur-radius: 5px;
+    --font-main: 'Segoe UI', Arial, sans-serif;
+}
+
+/* =====================
+   GLOBAL STYLES
+===================== */
+body {
+    margin: 0;
+    background-color: black;
+    font-family: var(--font-main);
+    color: white;
+    
+}
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+.item {
+    font-size: 18px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* =====================
+   GRID CONTAINER
+===================== */
+.conatiner {
+    background-color: antiquewhite;
+    border: 2px solid var(--secondary-color);
+    height: 400px;
+    display: grid;
+
+    grid-template-areas:
+        "my-header my-header my-header"
+        "my-sidebar my-contain-1 my-contain-1"
+        "my-sidebar my-contain-2 my-contain-2"
+        "my-sidebar my-contain-3 my-contain-3"
+        "my-footer my-footer my-footer";
+
+    gap: 8px;
+    padding: 10px;
+}
+
+/* =====================
+   GRID ITEMS
+===================== */
+.item {
+    background-color: rgba(245, 221, 179, 0.529);
+    border: 2px solid wheat;
+
+    /* TRANSITION */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Grid Areas */
+.item-1 { grid-area: my-header; }
+.item-2 { grid-area: my-sidebar; }
+.item-3 { grid-area: my-contain-1; }
+.item-4 { grid-area: my-contain-2; }
+.item-5 { grid-area: my-contain-3; }
+.item-8 { grid-area: my-footer; }
+
+/* =====================
+   BACKGROUNDS
+===================== */
+.text-container {
+    height: 400px;
+    width: 100%;
+    border: 2px solid var(--secondary-color);
+
+    background-image:
+        linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)),
+        url("./assets/images.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* =====================
+   BORDERS & SHADOWS
+===================== */
+.botder {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 200px;
+    height: 200px;
+
+    border: 4px dashed saddlebrown;
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px 10px wheat;
+
+    /* ANIMATION */
+    animation: pulse 2s infinite;
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* =====================
+   FILTERS
+===================== */
+.text-container:hover {
+    filter: blur(var(--blur-radius)) brightness(1.2);
+}
+
+/* =====================
+   OPACITY & VISIBILITY
+===================== */
+.item-2 {
+    opacity: 0.85;
+}
+
+.item-2:hover {
+    opacity: 1;
+}
+
+.item-5 {
+    visibility: hidden;
+}
+
+/* =====================
+   CUSTOM CURSOR & POINTER EVENTS
+===================== */
+.item-3 {
+    cursor: pointer;
+}
+
+.item-6 {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* =====================
+   MEDIA QUERIES
+===================== */
+
+/* Mobile First */
+@media (max-width: 768px) {
+    .conatiner {
+        grid-template-areas:
+            "my-header"
+            "my-sidebar"
+            "my-contain-1"
+            "my-contain-2"
+            "my-contain-3"
+            "my-footer";
+    }
+
+    .item {
+        font-size: 16px;
+    }
+}
+
+/* Desktop First */
+@media (min-width: 1024px) {
+    .item {
+        font-size: 20px;
+    }
+
+    .text-container {
+        height: 500px;
+    }
+}
+
+@media (min-width: 500) {
+    .item{
+        font-size: 18px;
+    }
+    .text-container{
+        height: 600px;
+    }
+}

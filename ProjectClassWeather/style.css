@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sky:       #0a0f1e;
+  --card:      rgba(255,255,255,0.05);
+  --border:    rgba(255,255,255,0.10);
+  --accent:    #4fc3f7;
+  --accent2:   #e040fb;
+  --text:      #e8eaf0;
+  --muted:     rgba(232,234,240,0.45);
+  --danger:    #ff5252;
+  --radius:    20px;
+  --glow:      0 0 40px rgba(79,195,247,0.18);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--sky);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,195,247,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 110%, rgba(224,64,251,0.14) 0%, transparent 55%);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Heading ── */
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  filter: drop-shadow(0 0 24px rgba(79,195,247,0.35));
+}
+
+/* ── Search Box ── */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box::before {
+  content: '⌕';
+  position: absolute;
+  left: 18px;
+  font-size: 1.3rem;
+  color: var(--muted);
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+#cityInput {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  backdrop-filter: blur(12px);
+}
+
+#cityInput::placeholder { color: var(--muted); }
+
+#cityInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79,195,247,0.12), var(--glow);
+}
+
+/* ── Search Button ── */
+#searchBtn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--accent) 0%, #0288d1 100%);
+  border: none;
+  border-radius: var(--radius);
+  color: #0a0f1e;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.25s, filter 0.25s;
+  box-shadow: 0 4px 24px rgba(79,195,247,0.25);
+}
+
+#searchBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 32px rgba(79,195,247,0.40);
+}
+
+#searchBtn:active { transform: translateY(0); }
+
+/* ── Error Message ── */
+#errorMessage {
+  background: rgba(255,82,82,0.12);
+  border: 1px solid rgba(255,82,82,0.35);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  color: #ff8a80;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Weather Card ── */
+#weatherInfo {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  box-shadow: var(--glow);
+  animation: slideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* City banner */
+#cityName {
+  background: linear-gradient(135deg, rgba(79,195,247,0.15), rgba(224,64,251,0.10));
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(79,195,247,0.5);
+}
+
+/* Main weather block */
+.weather-main {
+  padding: 28px 24px 20px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.temperature {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+#temp {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: var(--accent);
+  filter: drop-shadow(0 0 16px rgba(79,195,247,0.5));
+}
+
+.unit {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.description {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: capitalize;
+  padding-bottom: 8px;
+}
+
+/* Detail grid */
+.weather-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.detail-item {
+  padding: 18px 24px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.detail-item:nth-child(even) { border-right: none; }
+.detail-item:nth-child(3),
+.detail-item:nth-child(4) { border-bottom: none; }
+
+.detail-item:hover { background: rgba(79,195,247,0.05); }
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.detail-item span:last-child {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── Utility ── */
+.hidden { display: none !important; }
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  #temp { font-size: 4rem; }
+  #cityName { font-size: 1.6rem; }
+  .detail-item { padding: 14px 16px; }
+}

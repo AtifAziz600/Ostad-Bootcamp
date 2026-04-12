@@ -1,0 +1,40 @@
+h1 {
+    text-decoration: dashed;
+    text-transform: lowercase;
+
+}
+
+h2 {
+    text-decoration: wavy;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+h4 {
+    text-decoration: overline;
+    text-transform: none;
+}
+h5 {
+    text-decoration: line-through;
+    text-transform: capitalize;
+}
+h6 {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+p {
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+span {
+    text-decoration: overline;
+    text-transform: lowercase;
+}
+a {
+    text-decoration: none;
+    text-transform: none;
+}

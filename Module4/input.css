@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+  background-color: #eee;
+}
+
+.custom-shadow {
+  box-shadow: 5px 10px 32px #ccc;
+}

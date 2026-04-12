@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Fit & Position</title>
+  <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-gray-100 p-8 space-y-12">
+
+    <div class="h-[500px] w-[100px] border border-gray-400 overflow-hidden">
+        <img src="../../assets/all-gintama-anime-characters.jpg" class="w-full h-full object-cover" alt="">
+    </div>
+    
+    <div class="h-[500px] w-[100px] border border-gray-400 overflow-hidden">
+        <img src="../../assets/all-gintama-anime-characters.jpg" class="w-full h-full object-fill" alt="">
+    </div>
+        <div class="h-[500px] w-[100px] border border-gray-400 overflow-hidden">
+        <img src="../../assets/all-gintama-anime-characters.jpg" class="w-full h-full object-top-right" alt="">
+    </div>
+  <!-- ================= Object Fit ================= -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">Object Fit</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- object-cover -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-cover"
+          alt="Cover"
+        />
+      </div>
+
+      <!-- object-contain -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-contain bg-gray-200"
+          alt="Contain"
+        />
+      </div>
+
+      <!-- object-fill -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-fill"
+          alt="Fill"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= Object Position ================= -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">Object Position</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Center -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-cover object-center"
+          alt="Center"
+        />
+      </div>
+
+      <!-- Top -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-cover object-top"
+          alt="Top"
+        />
+      </div>
+
+      <!-- Bottom -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-cover object-bottom"
+          alt="Bottom"
+        />
+      </div>
+
+      <!-- Left -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-cover object-left"
+          alt="Left"
+        />
+      </div>
+
+      <!-- Right -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-cover object-right"
+          alt="Right"
+        />
+      </div>
+
+      <!-- Custom Position -->
+      <div class="w-full h-48 bg-white rounded-lg overflow-hidden shadow">
+        <img
+          src="../../assets/all-gintama-anime-characters.jpg"
+          class="w-full h-full object-cover object-[25%_75%]"
+          alt="Custom"
+        />
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

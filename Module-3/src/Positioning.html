@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Examples</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-gray-100 p-6 space-y-16">
+
+    <!-- RELATIVE EXAMPLE -->
+    <div class="relative bg-gray-200 p-6 w-64 border">
+        <p class="font-bold">Relative Position</p>
+        <div class="bg-amber-500 relative top-4 left-4 p-2 text-white">
+            Moves 1rem down & right
+        </div>
+    </div>
+<div>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi a quo asperiores qui neque culpa sequi ducimus ullam? Voluptas quo molestias iusto modi dolorem accusamus distinctio nesciunt quas laborum repellat.
+    </p>
+</div>
+<div class="bg-gray-800 fixed top-[700px] m-[50px] w-[400px] h-[200px] flex items-end p-[20px] rounded-2xl">
+    <div>
+        <h2 class="text-[22px] font-bold text-white">
+            This is heading
+        </h2>
+        <p class="text-[14px] text-white">
+            Lorem ipsum dolor sit amet <span class="text-blue-400">consectetur adipisicing</span> elit. Quidem, sint.
+        </p>
+    </div>
+    <span class="text-white ml-2 cursor-pointer absolute top-[20px] right-[20px]">&copy</span>
+</div>
+<div class="bg-gray-800 sticky top-[700px] m-[50px] w-[400px] h-[200px] flex items-end p-[20px] rounded-2xl">
+    <div>
+        <h2 class="text-[22px] font-bold text-white">
+            This is heading
+        </h2>
+        <p class="text-[14px] text-white">
+            Lorem ipsum dolor sit amet <span class="text-blue-400">consectetur adipisicing</span> elit. Quidem, sint.
+        </p>
+    </div>
+    <span class="text-white ml-2 cursor-pointer absolute top-[20px] right-[20px]">&copy</span>
+</div>
+<div class="bg-gray-800 relative m-[50px] w-[400px] h-[200px] flex items-end p-[20px] rounded-2xl">
+    <div>
+        <h2 class="text-[22px] font-bold text-white">
+            This is heading
+        </h2>
+        <p class="text-[14px] text-white">
+            Lorem ipsum dolor sit amet <span class="text-blue-400">consectetur adipisicing</span> elit. Quidem, sint.
+        </p>
+    </div>
+    <span class="text-white ml-2 cursor-pointer absolute top-[20px] right-[20px]">&copy</span>
+</div>
+
+
+    <!-- ABSOLUTE EXAMPLE -->
+    <div class="relative bg-gray-200 w-64 h-40 border p-4">
+        <p class="font-bold">Absolute Position (inside relative parent)</p>
+        <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1">
+            Absolute
+        </div>
+        <p class="mt-10">Other content inside parent.</p>
+    </div>
+
+    <!-- FIXED EXAMPLE -->
+    <div class="bg-gray-200 h-96 border p-4">
+        <p class="font-bold mb-2">Fixed Position (stays on viewport)</p>
+        <p>Scroll down to see the fixed button staying at bottom-right.</p>
+        <div class="fixed bottom-4 right-4 bg-green-500 text-white px-3 py-2 rounded shadow-lg">
+            Fixed Button
+        </div>
+        <div class="h-64 mt-4 bg-gray-300 flex items-center justify-center">
+            Scrollable content
+        </div>
+    </div>
+
+    <!-- STICKY EXAMPLE -->
+    <div class="h-[200vh] bg-gray-200 p-4 border">
+        <p class="font-bold mb-2">Sticky Position</p>
+        <div class="sticky top-0 bg-blue-500 text-white p-3 rounded shadow">
+            I stick to the top when scrolling!
+        </div>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down to see the sticky effect in action.
+            <br><br>
+            Repeat this content a few times to allow scrolling.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down to see the sticky effect in action.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down to see the sticky effect in action.
+        </p>
+    </div>
+
+</body>
+</html>

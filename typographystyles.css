@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    line-height: 1.5;
+}
+
+h2{
+    letter-spacing: 2px;
+}
+
+h3{
+    text-transform: uppercase;
+}
+h4{
+    text-transform: lowercase;
+}
+h5{
+    text-transform: capitalize;
+}
+h6{
+    text-transform: none;
+    text-decoration: wavy;
+}
+p{
+    font-size: 20px;
+    color: red;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.text{
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: italic;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-align: center;
+    overflow-y: scroll;
+}

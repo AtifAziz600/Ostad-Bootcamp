@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 200px;
+    height: 100px;
+    background-color: #f0f0f0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.text{
+    font-size: 40px;
+    line-height: 100px;
+    color: #333;
+    font-weight: bold;
+    text-shadow: #333 2px 2px 4px;
+}

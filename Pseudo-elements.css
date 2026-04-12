@@ -1,0 +1,64 @@
+.title::before{
+    content: "Read This - ";
+    color: red;
+}
+
+.title::after{
+    content: " - End of Title";
+    color: blue;
+}
+
+button::before{
+    content: "👉 ";
+} button::hover{
+    background-color: lightgray;
+    color: black;
+}
+
+input::placeholder{
+    color: gray;
+    font-style: italic;
+}
+input:focus::placeholder{
+    color: transparent;
+    border: 6px solid blue;
+    border-radius: 5px
+}
+input{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+li:first-child{
+    font-weight: bold;
+    color: green;
+}
+li:last-child{
+    font-weight: bold;
+    color: red;
+}
+li:nth-child(3){
+    font-weight: bold;
+    color: blue;
+}
+li:nth-child(odd){
+    background-color: lightgray;
+}
+li:nth-child(even){
+    background-color: silver;
+}
+li:nth-child(2n+1) {
+    font-style: italic;
+    color: purple;
+}
+li:nth-child(2n) {
+    font-style: italic;
+    color: orange;
+}
+
+p:last-of-type{
+    font-size: 18px;
+    color: brown;
+}

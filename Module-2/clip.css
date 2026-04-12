@@ -1,0 +1,26 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    clip-path: circle(50%);
+    transition: clip-path 0.5s ease;
+    cursor: pointer;
+}
+
+.clip{
+    width: 200px;
+    height: 200px;
+    background-color: lightgreen;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transition: clip-path 0.5s ease;
+    cursor: pointer;
+}
+
+.masking {
+    width: 600px;
+    height: 400px;
+    background-image: url('./assets/images.png');
+    mask-image: url("../assets/images.png");
+    background-position: center center;
+    mask-repeat: no-repeat;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/output.css">
+</head>
+<body>
+        <header class="bg-white shadow-2xl py-5 sticky top-0">
+        <div class="max-w-300 mx-auto flex items-center justify-between px-3 lg:px-0">
+            <h1 class="text-2xl font-bold capitalize">
+                Blog Site
+            </h1>
+            <nav class="hidden md:flex gap-x-2 text-gray-600">
+        <a href="index.html" class="hover:text-black">Home</a>
+        <a href="about.html" class="hover:text-black">About</a>
+        <a href="contact.html" class="hover:text-black">Contact</a>
+            </nav>
+            <button class="md:hidden text-2xl">
+                ☰
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="min-h-[90vh] max-w-3xl mx-auto px-4 py-10">
+                  <h2 class="text-3xl font-bold mb-6">
+        Contact Me
+      </h2>
+      <form action="" class="space-y-4">
+        <input
+          type="text"
+          placeholder="Your Name"
+          class="w-full border p-3 rounded-lg focus:outline-none"
+        >
+        <input
+          type="email"
+          placeholder="Your Email"
+          class="w-full border p-3 rounded-lg focus:outline-none"
+        >
+        <textarea
+          placeholder="Your Message"
+          class="w-full border p-3 rounded-lg focus:outline-none h-40"
+        >
+        </textarea>
+        <button class="bg-black text-white px-3 py-1 rounded hover:bg-gray-800 cursor-pointer">
+          Submit
+        </button>
+      </form>
+        </section>
+    </main>
+        <footer class="bg-gray-900 text-white flex items-center sticky justify-center bottom-0 py-4">
+        Copyright @ <script>document.write(new Date().getFullYear());</script>
+    </footer>
+</body>
+</html>

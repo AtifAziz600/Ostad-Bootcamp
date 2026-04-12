@@ -1,0 +1,10 @@
+body {
+    background-image: url('../assets/images.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+/* body {
+    background: radial-gradient(circle, red, yellow);
+} */

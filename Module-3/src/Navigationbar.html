@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Navbar</title>
+  <link rel="stylesheet" href="./output.css" />
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="text-xl font-bold text-indigo-600">
+        <img src="../../assets/images.png" class="w-24 h-16" alt="">
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+        <a href="#" class="hover:text-indigo-600">Home</a>
+        <a href="#" class="hover:text-indigo-600">About</a>
+        <a href="#" class="hover:text-indigo-600">Services</a>
+        <a href="#" class="hover:text-indigo-600">Contact</a>
+      </nav>
+
+      <!-- Button -->
+      <div class="hidden md:block">
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+          Login
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+      <label for="menu-toggle" class="md:hidden cursor-pointer">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </label>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden peer-checked:block hidden bg-white border-t">
+    <nav class="flex flex-col p-4 space-y-3 text-gray-700 font-medium">
+      <a href="#" class="hover:text-indigo-600">Home</a>
+      <a href="#" class="hover:text-indigo-600">About</a>
+      <a href="#" class="hover:text-indigo-600">Services</a>
+      <a href="#" class="hover:text-indigo-600">Contact</a>
+      <button class="bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+        Login
+      </button>
+    </nav>
+  </div>
+</header>
+
+</body>
+</html>

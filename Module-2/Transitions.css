@@ -1,0 +1,40 @@
+button{
+    height: 100px;
+    width: 200px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+button:hover{
+    background-color: coral;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    cursor: pointer;
+    animation: moveRight 2s infinite alternate-reverse;
+}
+@keyframes moveRight{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        background-color: red;
+    }
+    100%{
+        transform: translateX(100px);
+    }
+}
+.box:hover{
+    background-color: coral;
+    transform: scale(1.2) rotate(15deg);
+
+}

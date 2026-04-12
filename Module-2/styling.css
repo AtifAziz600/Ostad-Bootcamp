@@ -1,0 +1,26 @@
+p{
+    color: red;
+}
+
+#text-1{
+    color: rgb(0, 255, 255);
+}
+
+#text-2{
+    color: hsl(120, 100%, 50%);
+}
+
+.text-3{
+    text-align: center;
+}
+.text-4{
+    letter-spacing: 10px;
+}
+
+.text-5{
+    word-spacing: 20px;
+}
+
+.text-6{
+    line-height: 4;
+}

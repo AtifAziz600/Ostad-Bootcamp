@@ -1,0 +1,28 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-spacing: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:nth-child(odd) {
+    background-color: silver;
+}
+
+@media screen and (max-width) {
+    table{
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+}

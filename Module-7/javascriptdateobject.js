@@ -1,0 +1,27 @@
+const date1 = new Date('2023-01-01');
+console.log(date1);
+
+const date = new Date();
+console.log(date);
+console.log(date.getFullYear());
+console.log(date.getMonth());
+console.log(date.getDate());
+console.log(date.getDay());
+console.log(date.getHours());
+console.log(date.getMinutes());
+console.log(date.getSeconds());
+console.log(date.getMilliseconds());
+console.log(date.getTime());
+console.log(date.toString());
+console.log(date.toDateString());
+console.log(date.toTimeString());
+console.log(date.toLocaleString());
+console.log(date.toLocaleDateString());
+console.log(date.toLocaleTimeString());
+console.log(date.toISOString());
+console.log(date.toJSON());
+console.log(date.toUTCString());
+console.log(date.toGMTString());
+console.log(date.toGMTString());
+console.log(date.toTimeString());
+console.log(date.toTimeString());

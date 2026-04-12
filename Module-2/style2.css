@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p {
+    color: purple;
+    font-size: 40px;
+}
+
+h1 {
+    color: red;
+    font-size: 50px;
+    display: inline;
+    margin: 20px;
+}
+
+.myclass{
+    color: blue;
+    font-size: 30px;
+}
+
+.littleClass{
+    color: green;
+    font-size: 20px;
+}
+
+h2, h3, h4, h5, h6{
+    color: orange;
+    font-size: 25px;
+}
+
+div > p{
+    color: brown;
+    font-size: 35px;
+}
+
+.btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: darkblue;
+    padding: 12px 24px;
+}

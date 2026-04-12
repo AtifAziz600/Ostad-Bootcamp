@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MERN Stack Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./output.css">
+  <style>
+    body {
+      background: radial-gradient(circle at top, #0f172a, #020617);
+    }
+  </style>
+</head>
+
+<body class="text-gray-100">
+
+<!-- Navbar -->
+<nav class="fixed w-full z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+      YourName.dev
+    </h1>
+    <div class="space-x-6 hidden md:block">
+      <a href="#about" class="hover:text-cyan-400 transition">About</a>
+      <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+      <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+      <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="min-h-screen flex items-center justify-center px-6 pt-20">
+  <div class="text-center max-w-3xl">
+    <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+      Building <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+        Powerful
+      </span> Web Experiences
+    </h2>
+    <p class="text-gray-400 text-lg mb-8">
+      MERN Stack Developer focused on crafting scalable, fast, and modern
+      web applications with clean UI and solid backend architecture.
+    </p>
+    <div class="flex justify-center gap-4">
+      <a href="#projects"
+         class="px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:scale-105 transition font-semibold">
+        View Projects
+      </a>
+      <a href="#contact"
+         class="px-8 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition">
+        Contact Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 class="text-4xl font-bold mb-6">About Me</h3>
+      <p class="text-gray-400 leading-relaxed">
+        I'm a full-stack MERN developer who loves building real-world products.
+        I focus on writing clean code, designing intuitive user interfaces,
+        and creating backend systems that scale.
+      </p>
+      <p class="text-gray-400 mt-4">
+        Currently working with React, Node.js, MongoDB, and modern UI systems
+        like Tailwind and REST APIs.
+      </p>
+    </div>
+
+    <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8">
+      <h4 class="text-xl font-semibold mb-4">Quick Facts</h4>
+      <ul class="space-y-3 text-gray-300">
+        <li>⚡ MERN Stack Specialist</li>
+        <li>🚀 API & Performance Focused</li>
+        <li>🎯 Clean UI + Strong Logic</li>
+        <li>💻 Real-world Project Experience</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="bg-white/5 border-y border-white/10">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <h3 class="text-4xl font-bold text-center mb-12">Tech Stack</h3>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Skill Card -->
+      <div class="skill-card">MongoDB</div>
+      <div class="skill-card">Express.js</div>
+      <div class="skill-card">React.js</div>
+      <div class="skill-card">Node.js</div>
+      <div class="skill-card">Tailwind CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">REST APIs</div>
+      <div class="skill-card">Git & GitHub</div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="max-w-7xl mx-auto px-6 py-20">
+  <h3 class="text-4xl font-bold text-center mb-16">Featured Projects</h3>
+
+  <div class="grid md:grid-cols-3 gap-10">
+    <!-- Project -->
+    <div class="project-card">
+      <h4>E-Commerce Platform</h4>
+      <p>Full MERN app with auth, admin panel, and payment integration.</p>
+      <span>MERN • JWT • Stripe</span>
+    </div>
+
+    <div class="project-card">
+      <h4>Task Management App</h4>
+      <p>Modern productivity app with real-time CRUD operations.</p>
+      <span>React • Node • MongoDB</span>
+    </div>
+
+    <div class="project-card">
+      <h4>Portfolio System</h4>
+      <p>Dynamic portfolio with CMS-style content control.</p>
+      <span>React • Tailwind</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-white/5 border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h3 class="text-4xl font-bold mb-6">Let’s Work Together</h3>
+    <p class="text-gray-400 mb-8">
+      Have a project or idea? I’m open to freelance, remote, and full-time roles.
+    </p>
+    <a href="mailto:youremail@example.com"
+       class="inline-block px-10 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:scale-105 transition font-semibold">
+      Get In Touch
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-6 text-gray-500 text-sm">
+  © 2025 YourName • MERN Stack Developer
+</footer>
+
+<!-- Utility Classes -->
+<style>
+  .skill-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 text-center 
+           hover:scale-105 hover:border-cyan-400 transition font-semibold;
+  }
+  .project-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8
+           hover:scale-105 hover:border-purple-400 transition;
+  }
+  .project-card h4 {
+    @apply text-xl font-semibold mb-3;
+  }
+  .project-card p {
+    @apply text-gray-400 mb-4;
+  }
+  .project-card span {
+    @apply text-sm text-cyan-400;
+  }
+</style>
+
+</body>
+</html>

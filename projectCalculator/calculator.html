@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.calculator {
+    width: 300px;
+    height: 400px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.dontsee{
+    display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  transform: translate(-50%, -50%);
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <h2>Insert Your Input</h2>
+        <input type="number" id="firstInput" placeholder="Enter your number">
+        <input type="number" id="secondInput" placeholder="Enter your number">
+        <h3>Choose Your Operation</h3>
+        <button id="addBtn">Add</button>
+        <button id="subBtn">Subtract</button>
+        <button id="mulBtn">Multiply</button>
+        <button id="divBtn">Divide</button>
+        <h4>Result: <span id="result">0</span></h4>
+    </div>
+<div id="overlay" class="overlay dontsee">
+    <div id="modalBox" class="modal">
+        <p>Infinity...</p>
+        <button id="closeModalBtn">
+            Close
+        </button>
+    </div>
+</div>
+
+    <script src="./calculator.js"></script>
+</body>
+</html>

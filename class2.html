@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleclick() {
+            alert("Hello, welcome to the website!");
+        }
+        function call() {
+            console.log("Button clicked!");
+        }
+    </script>
+</head>
+<body>
+    <ol type="i">
+        <li>
+            Football
+        </li>
+        <li>
+            Cricket
+        </li>
+        <li>
+            Tennis
+        </li>
+    </ol>
+    <ul type="square">
+        <li>
+            Apple
+        </li>
+        <li>
+            Banana
+        </li>
+        <li>
+            Orange
+        </li>
+    </ul>
+        <dl>
+        <dt>HTML</dt>
+        <dd>Hyper Text Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+        <dt>JavaScript</dt>
+        <dd>JavaScript is a programming language</dd>
+    </dl>
+    <table border="1">
+<tbody>
+            <caption>This is a table</caption>
+        <colgroup>New Table</colgroup>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>30</td>
+            <td>Los Angeles</td>
+        </tr>
+        <tr>
+            <td>Mike</td>
+            <td>28</td>
+            <td>Chicago</td>
+        </tr>
+</tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">End of Table</td>
+        </tr>
+        <tr>
+            <td rowspan="2">End of Table</td>
+        1</tr>
+        </tfoot>
+    </table>
+    <input type="text" value="Sample Text">
+    <button type="submit" onclick="handleclick()">Click me</button>
+        <button type="button">Click Me</button>
+    <br>
+    <br>
+    <input type="submit" value="Submit Data">
+    <br>
+    <input type="reset" value="Reset Button">
+
+    <form action="" novalidate>
+        <fieldset>
+            <legend>Personal Information</legend>
+        </fieldset>
+        <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit">
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+            <input type="checkbox" id="subscribe" name="subscribe" value="subscribe">
+            <label for="subscribe">Subscribe to newsletter</label>
+            <button type="submit">Submit</button>
+            </div>
+    </form>
+    <h3>Metimedia</h3>
+    <img src="./assets/images.png" height="100%" width="100%" alt="this is a image">
+    <a href="www.google.com" target="_blank" rel="noopener noreferrer">Click Me</a>
+    <video width="100%" controls>
+        <source src="./assets/video.mp4" type="video/mp4">
+      </video>
+      <audio controls>
+        <source src="./assets/cinematic-hit-3-317170.mp3" type="audio/mpeg">
+      </audio>
+      <div>
+        <details>
+        <summary>More Information</summary>
+        <p>This is additional information that can be toggled.</p>
+      </details>
+      <details>
+        <summary>Additional Details</summary>
+        <p>Here are some more details that can be viewed when needed.</p>
+      </details>
+      </div>
+            <dialog open>
+        <p>This is a dialog box</p>
+        <button onclick="this.parentElement.close()">Close</button>
+      </dialog>
+      <h3>Dialog Element</h3>
+      <dialog id="deal-popup" style="text-align: center; width: 50%;">
+        <p>
+            <h1>The latest News</h1>
+            <article>
+                <h2>Breaking News: New Technology Emerges</h2>
+                <p>Today, a groundbreaking technology was unveiled that promises to revolutionize the industry. Experts are calling it a game-changer.</p>
+            </article>
+            <article>
+                <h2>World Cup 2024: Teams Announced</h2>
+                <p>The host countries for the upcoming World Cup have been announced, sparking excitement among fans worldwide.</p>
+            </article>
+            <article>
+                <h2>Economic Update: Market Trends</h2>
+                <p>Recent economic data shows a steady growth in key sectors, with analysts predicting continued expansion in the coming months.</p>
+            </article>
+        </p>
+      </dialog>
+      <button onclick="document.getElementById('deal-popup').showModal()">Open</button>
+</body>
+</html>

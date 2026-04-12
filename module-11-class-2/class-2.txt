@@ -1,0 +1,29 @@
+Based on the meeting from March 8, 2026, the following topics were discussed:
+
+Core Topics:
+
+JavaScript execution and V8 engine: How JavaScript code is executed, the role of the V8 engine, and the process of parsing code
+
+Tokenization: Breaking down code into tokens (e.g., converting const A = 10 into individual tokens)
+
+AST (Abstract Syntax Tree): Building abstract syntax trees from tokenized code, with practical examples using AST visualizers and JSON format
+
+Variable declarations: How variable declarations are represented in the AST structure
+
+Code parsing process: The overall process from input code to machine code execution
+
+Additional Topics Mentioned:
+
+Node.js modules
+
+Request-response model
+
+HTTP client
+
+package.json file
+
+URL module
+
+File System (FS) module
+
+The discussion was primarily focused on fundamental JavaScript execution concepts, particularly tokenization and AST building
