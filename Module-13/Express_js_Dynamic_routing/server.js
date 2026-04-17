@@ -4,7 +4,7 @@ const app = express();
 //Dynamic Routing what ever we write in the url it will be treated as a parameter
 //Reason for using dynamic routing is to make our application more flexible and reusable
 app.get("/page/:slug", (req, res) => {
-    const slugName = req.params.slug;
+    const slugName = req.params.slug;//Accessing the dynamic parameter 'slug' from the URL
     res.send(`You are on the Page No: ${slugName} `);
 });
 
