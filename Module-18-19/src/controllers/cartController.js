@@ -80,7 +80,7 @@ exports.createCart = async (req, res) => {
 
 exports.readCart = async (req, res) => {
   try {
-    let user_id = new ObjectId(req.header._id);
+    let user_id = new ObjectId(req.headers._id);
     let matchStage = { $match: { user_id} };
 
     let lookWithProducts = {
@@ -141,6 +141,7 @@ exports.readCart = async (req, res) => {
         message: "Cart fetched successfully",
         data
     })
+    console.log(data);
   } catch (error) {
     res.status(500).json({
       success: false,

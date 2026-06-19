@@ -7,6 +7,7 @@ const categoryController = require("../controllers/categoryController");
 const brandController = require("../controllers/brandController");
 const reviewController = require("../controllers/reviewController");
 const cartController = require("../controllers/cartController");
+const invoiceController = require("../controllers/invoiceController");
 const authVerificationAdmin = require('../middlewares/authVerificationAdmin');
 const authVerificationUser = require('../middlewares/authVerificationUser');
 
@@ -57,5 +58,11 @@ router.post("/create-cart", authVerificationUser, cartController.createCart)
 router.get("/read-cart", authVerificationUser, cartController.readCart)
 router.put("/update-cart/:cart_id", authVerificationUser, cartController.updateCart)
 router.delete("/delete-cart/:cart_id", authVerificationUser, cartController.deleteCart)
+
+// Invoice API
+router.post("/create-invoice", authVerificationUser, invoiceController.createInvoice)
+router.get("/read-all-invoice-single-user/:page_no/:per_page", authVerificationUser, invoiceController.readAllInvoiceSingleUser)
+router.get("/read-single-invoice-single-user/:invoice_id", authVerificationUser, invoiceController.readSingleInvoiceSingleUser)
+router.get("/read-invoice-product-list-single-user/:page_no/:per_page", authVerificationUser, invoiceController.readInvoiceProductListSingleUser)
 
 module.exports = router;
