@@ -7,6 +7,8 @@ const invoiceProductModel = require("../models/invoiceProductModel");
 const productModel = require("../models/productModel");
 const ObjectId = mongoose.Types.ObjectId;
 
+let redirect_url = "/cart-thank-you"
+
 exports.createInvoice = async (req, res) => {
   try {
     let user_id = new ObjectId(req.header._id);
@@ -324,3 +326,68 @@ res.status(200).json({
     })
   }
 }
+
+// payment part
+
+exports.paymentSuccess = async (req, res) => {
+  try {
+    let trx_id = req.params.trx_id;
+
+    await invoiceModel.updateOne({tran_id: trx_id}, {payment_status: "success"});
+    res.redirect(redirect_url);
+  } catch (error) {
+      res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.toString(),
+      })
+  }
+}
+
+exports.paymentCancel = async (req, res) => {
+  try {
+    let trx_id = req.params.trx_id;
+
+    await invoiceModel.updateOne({tran_id: trx_id}, {payment_status: "cancel"});
+    res.redirect(redirect_url);
+  } catch (error) {
+      res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.toString(),
+      })
+  }
+} 
+
+exports.paymentFail = async (req, res) => {
+  try {
+    let trx_id = req.params.trx_id;
+
+    await invoiceModel.updateOne({tran_id: trx_id}, {payment_status: "fail"});
+    res.redirect(redirect_url);
+  } catch (error) {
+      res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.toString(),
+      })
+  }
+}
+
+exports.paymentIpn = async (req, res) => {
+  try {
+    let trx_id = req.params.trx_id;
+    // here is something you can send as a message
+    res.status(200).json({
+      success: true,
+      message: "Here is something you need to have....."
+    })
+  } catch (error) {
+      res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.toString(),
+      })
+  }
+}
+

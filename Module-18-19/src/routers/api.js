@@ -65,4 +65,7 @@ router.get("/read-all-invoice-single-user/:page_no/:per_page", authVerificationU
 router.get("/read-single-invoice-single-user/:invoice_id", authVerificationUser, invoiceController.readSingleInvoiceSingleUser)
 router.get("/read-invoice-product-list-single-user/:page_no/:per_page", authVerificationUser, invoiceController.readInvoiceProductListSingleUser)
 
+router.post("/payment-success/:trx_id", invoiceController.paymentSuccess);
+router.post("/payment-cancel/:trx_id", invoiceController.paymentCancel);
+router.post("/payment-ipn/:trx_id", invoiceController.paymentIpn);
 module.exports = router;
