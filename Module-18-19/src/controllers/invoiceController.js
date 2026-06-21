@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const axios = require('axios');
+const { Parser } = require("json2csv");
 const cartModel = require("../models/cartModel");
 const userModel = require("../models/userModel");
 const invoiceModel = require("../models/invoiceModel");
@@ -391,3 +392,198 @@ exports.paymentIpn = async (req, res) => {
   }
 }
 
+exports.allOrderList = async (req, res) => {
+  try {
+    const page_no = Number(req.params.page_no);
+    const per_page = Number(req.params.per_page);
+
+    const skipRow = (page_no - 1) * per_page;
+
+    const {from, to} = req.query;
+
+    const fromDate = from ? new Date(`${from} T00:00:00`) : new Date("1970-01-01T00:00:00");
+
+    const toDate = to ? new Date(`${to} T23:99:99`) : new Date();
+
+    const matchStage = {
+      createdAt: {
+        $gte: fromDate,
+        $lte: toDate,
+      }
+    }
+
+    let joinStageWithProduct = {
+      $lookup: {
+        from: "orders",
+        localField: "_id",
+        foreignField: "invoice_id",
+        as: "product"
+      }
+    }
+    const facetStage = {
+      $facet: {
+        totalCount: [{ $count: "count" }],
+        products: [
+          { $sort: {createdAt: -1} },
+          { $skip: skipRow },
+          {$limit: per_page},
+          joinStageWithProduct,
+        ]
+      }
+    }
+
+    const products = await invoiceModel.aggregate([
+      { $match: matchStage },
+      facetStage
+    ]);
+
+    res.status(200).json({
+      success: true,
+      message: "All order list fetched successfully",
+      data: products[0],
+    })
+  } catch (error) {
+      res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.toString(),
+      })
+  }
+}
+
+exports.exportCsv = async (req, res) => {
+  try {
+    const {from, to} = req.query;
+    
+    const fromDate = from ? new Date(`${from} T00:00:00`) : new Date("1970-01-01T00:00:00");
+
+    const toDate = to ? new Date(`${to} T23:99:99`) : new Date();
+    const matchStage = {
+      createdAt: {
+        $gte: fromDate,
+        $lte: toDate,
+      }
+    }
+    const data = await invoiceModel.find(matchStage).sort({ createdAt: -1 });
+
+    const fields = [
+      "_id",
+      "user_id",
+      "payable",
+      "delivery_status",
+      "payment_status",
+      "total",
+      "createdAt",
+    ];
+
+    // convert to csv
+    const parser = new Parser({ fields });
+    const csv = parser.parse(data);
+
+    //send files
+    res.header("Content-Type", "text/csv");
+    res.attachment("invoices.csv");
+    res.send(csv);
+  } catch (error) {
+      res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.toString(),
+      })
+  }
+}
+
+exports.updateInvoice = async(req, res) => {
+  try {
+    const { _id, user_id, delivery_status } = req.body;
+
+    const checkInvoice = await invoiceModel.findById(_id);
+    if(!checkInvoice){
+      return res.status(200).json({
+        success: false,
+        message: "Invoice was not found"
+      })
+    }
+    // prevent multiple update
+    if(checkInvoice.delivery_status === "delivered"){
+      return res.status(200).json({
+        success: false,
+        message: "Product already delivered"
+      })
+    }
+        if(checkInvoice.delivery_status === "cancel"){
+      return res.status(200).json({
+        success: false,
+        message: "Product already canceled"
+      })
+    }
+
+    // Handle logic based on payment_status
+    const paymentStatus = checkInvoice.payment_status;
+
+    if(paymentStatus === "success"){
+
+      if(delivery_status === "delivered"){
+        const data = await invoiceModel.findByIdAndUpdate(
+          {_id, user_id},
+          {delivery_status},
+          {new: true}
+        );
+        return res.status(200).json({
+          success: true,
+          message: "Product Delivered successfully",
+          data,
+        })
+      }
+
+      if(delivery_status === "cancel" ){
+        return res.status(200).json({
+          success: false,
+          message: "Payment is success. you can't cancel"
+        })
+      }
+
+      return res.status(200).json({
+        success: false,
+        message: "Invaild delivery status update"
+      })
+    }else{
+      if(delivery_status === "cancel"){
+        const invoiceProduct = await invoiceModel.find({
+          invoice_id: _id,
+        });
+
+        for(const item of invoiceProduct){
+          await productModel.updateOne(
+            { _id: item.product_id},
+            {$inc: {stock: item.qty}}
+          )
+        }
+
+        //Update invoice as cancel
+        const data = await invoiceModel.findByIdAndUpdate(
+          {_id, user_id },
+          { delivery_status },
+          { new: true }
+        );
+
+        res.status(200).json({
+          success: true,
+          message: "Unpaid ordered canceled and stock restored",
+          data
+        })
+      }
+
+      return res.status(200).json({
+        success: false,
+        message: "Can't delivered because payment was not successfull"
+      })
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.toString(),
+      })
+  }
+}

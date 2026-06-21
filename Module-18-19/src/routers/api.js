@@ -8,8 +8,11 @@ const brandController = require("../controllers/brandController");
 const reviewController = require("../controllers/reviewController");
 const cartController = require("../controllers/cartController");
 const invoiceController = require("../controllers/invoiceController");
+const fileController = require("../controllers/fileController");
+const dashboardController = require("../controllers/dashboardSummaryController");
 const authVerificationAdmin = require('../middlewares/authVerificationAdmin');
 const authVerificationUser = require('../middlewares/authVerificationUser');
+const fileUpload = require('../middlewares/fileUpload');
 
 // Admin API
 router.post("/admin-register", adminController.register)
@@ -59,13 +62,30 @@ router.get("/read-cart", authVerificationUser, cartController.readCart)
 router.put("/update-cart/:cart_id", authVerificationUser, cartController.updateCart)
 router.delete("/delete-cart/:cart_id", authVerificationUser, cartController.deleteCart)
 
+//For User
 // Invoice API
 router.post("/create-invoice", authVerificationUser, invoiceController.createInvoice)
 router.get("/read-all-invoice-single-user/:page_no/:per_page", authVerificationUser, invoiceController.readAllInvoiceSingleUser)
 router.get("/read-single-invoice-single-user/:invoice_id", authVerificationUser, invoiceController.readSingleInvoiceSingleUser)
 router.get("/read-invoice-product-list-single-user/:page_no/:per_page", authVerificationUser, invoiceController.readInvoiceProductListSingleUser)
+router.put("/update-invoice", authVerificationAdmin, invoiceController.updateInvoice)
 
+// Payment API
 router.post("/payment-success/:trx_id", invoiceController.paymentSuccess);
 router.post("/payment-cancel/:trx_id", invoiceController.paymentCancel);
 router.post("/payment-ipn/:trx_id", invoiceController.paymentIpn);
+
+//For Admin
+// All Order API
+router.get("/all-order-list/:page_no/:per_page", authVerificationAdmin, invoiceController.allOrderList);
+router.get("/export-csv", authVerificationAdmin, invoiceController.exportCsv);
+
+//File API
+router.post("/file-upload", authVerificationAdmin, fileUpload, fileController.fileUpload);
+router.get("/all-file/:page_no/:per_page", fileController.allFile);
+router.post("/file-remove", authVerificationAdmin, fileController.fileRemove);
+
+//Dashboard API
+router.get("/dashboard-summary", dashboardController.dashboardSummary)
+
 module.exports = router;

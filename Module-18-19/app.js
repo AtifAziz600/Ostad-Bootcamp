@@ -85,7 +85,7 @@ app.use(limiter);
 
 app.use("/api/v1", router);
 
-app.use("/api/v1/file-get", express.static("uploads"));
+app.use("/api/v1/get-file", express.static("uploads"));
 
 // app.use("/super-admin", express.static(path.join(__dirname, "client", "super-admin", "dist"), {
 //     index: false,
