@@ -1,13 +1,17 @@
-import UseRefCachingExpensiveComputation from "./Hook/UseRefCachingExpensiveComputation"
-import UseRefInnerTextInnerHTML from "./Hook/useRefInnerTextInnerHTML"
-import UseRefWorkingWithAttribute from "./Hook/UseRefWorkingWithAttribute"
-import UseRefWorkingWithCSSClass from "./Hook/UseRefWorkingWithCSSClass"
-import UseRefWorkingWithInputElement from "./Hook/UseRefWorkingWithInputElement"
-import UseRefWorkingWithPersistedMutableProperty from "./Hook/UseRefWorkingWithPersistedMutableProperty"
-import UseStateManagingFormLikePro from "./Hook/UseStateManagingFormLikePro"
-import UseStateUnderstadingInside from "./Hook/UseStateUnderstadingInside"
-import UseStateWorkingWithImmutableArray from "./Hook/UseStateWorkingWithImmutableArray"
-import UseStateWorkingWithImmutableObject from "./Hook/UseStateWorkingWithImmutableObject"
+import ReactCustomHooks from "./Hook-Lecture/ReactCustomHooks"
+import UseEffectcallingapiusingasyncawait from "./Hook-Lecture/UseEffectcallingapiusingasyncawait"
+import UseEffectcallingapiusingpromises from "./Hook-Lecture/UseEffectcallingapiusingpromises"
+import UseEffectunderstandingargumentsanduses from "./Hook-Lecture/UseEffectunderstandingargumentsanduses"
+import UseRefCachingExpensiveComputation from "./Hook-Lecture/UseRefCachingExpensiveComputation"
+import UseRefInnerTextInnerHTML from "./Hook-Lecture/useRefInnerTextInnerHTML"
+import UseRefWorkingWithAttribute from "./Hook-Lecture/UseRefWorkingWithAttribute"
+import UseRefWorkingWithCSSClass from "./Hook-Lecture/UseRefWorkingWithCSSClass"
+import UseRefWorkingWithInputElement from "./Hook-Lecture/UseRefWorkingWithInputElement"
+import UseRefWorkingWithPersistedMutableProperty from "./Hook-Lecture/UseRefWorkingWithPersistedMutableProperty"
+import UseStateManagingFormLikePro from "./Hook-Lecture/UseStateManagingFormLikePro"
+import UseStateUnderstadingInside from "./Hook-Lecture/UseStateUnderstadingInside"
+import UseStateWorkingWithImmutableArray from "./Hook-Lecture/UseStateWorkingWithImmutableArray"
+import UseStateWorkingWithImmutableObject from "./Hook-Lecture/UseStateWorkingWithImmutableObject"
 
 function App() {
 
@@ -23,6 +27,10 @@ function App() {
       <UseStateWorkingWithImmutableObject/>
       <UseStateWorkingWithImmutableArray/>
       <UseStateManagingFormLikePro/>
+      <UseEffectunderstandingargumentsanduses/>
+      <UseEffectcallingapiusingpromises/>
+      <UseEffectcallingapiusingasyncawait/>
+      <ReactCustomHooks/>
     </div>
   )
 }
